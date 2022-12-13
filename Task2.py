@@ -1,19 +1,14 @@
 # Напишите программу для. проверки истинности утверждения ¬(X ⋁ Y ⋁ Z) = ¬X ⋀ ¬Y ⋀ ¬Z для всех значений предикат.
 
-print('Введите X :');
-x = int(input())
+for x in 0,1:
+    for y in 0,1:
+        for z in 0,1:
 
-print('Введите Y :');
-y = int(input())
+            left = not (x or y or z)
+            right = not x and not y and not z
+            result = left == right
 
-print('Введите Z :');
-z = int(input())
-
-left = not (x or y or z)
-right = not x and not y and not z
-result = left == right
-
-if result == True:
-    print(f"Утверждение истинно")
-else:
-    print(f"Утверждение ложно")
+            if result == True:
+                print(f"Утверждение истинно")
+            else:
+                print(f"Утверждение ложно")
